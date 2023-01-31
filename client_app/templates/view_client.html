@@ -1,0 +1,131 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EIC Clints</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
+   </head>
+
+   <style>
+    .header {
+        /* padding: 0px; */
+        text-align: right;
+        background: #fbfffe;
+        color: white;
+        font-size: 20px;
+        top: -30%;
+      }
+
+      .cool-link {
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 100%;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+    </style>
+
+
+  <body>
+
+    <h1>
+      
+      <a class="cool-link" button style="margin:5px" href="http://127.0.0.1:8000/" role="button"><img src="{% static 'EIC-LOGO.png' %}"></a>
+    <div class="header">
+      <!-- <img src="{% static 'EIC-LOGO.png' %}"> -->
+        
+        <a class="cool-link" button style="margin:5px" href="http://127.0.0.1:8000/" role="button"><img src="{% static 'home.png' %}"></a>
+
+
+        <!-- <div class="container"> -->
+
+          <a class="cool-link" button style="margin:5px" href="/add_client" role="button">Add Clients</a>
+          <a class="cool-link" button style="margin:5px" href="/filter_client" role="button">Filter Clients</a>
+          <a class="cool-link" button style="margin:5px" href="/project_details" role="button">Project Details</a>
+          <a class="cool-link" button style="margin:5px" href="/signout"> SignOut </a>
+   
+        <!-- </div> -->
+    </div>
+    </h1>
+    <hr>
+
+    <div class="container">
+
+        <table class="table table-success table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col" style="color:#0b0e0f">Serial</th>
+                <th scope="col" style="color:#0b0e0f">Client Name</th>
+                <th scope="col" style="color:#0b0e0f">Project Name</th>
+                <th scope="col" style="color:#0b0e0f">Project Details</th>
+               <!-- <th scope="col" style="color:#0b0e0f">Project Role</th> -->
+                <th scope="col" style="color:#0b0e0f">Project Status</th>
+              </tr>
+            </thead>
+
+            {% for detail in details %}
+
+            <tbody>
+              {% if detail.is_approved %}
+
+              <tr>
+                <th scope="row" style="color:#4169E1">{{detail.serial_num}}</th>
+                <td style="color:#4169E1">{{detail.client_name}}</td>
+                <td style="color:#4169E1">{{detail.project_name}}</td>
+                <td style="color:#4169E1">{{detail.scope}}</td>
+               <!-- <td style="color:#4169E1">{{detail.project_role.name}}</td> -->
+                <td style="color:#4169E1">{{detail.project_status.status}}</td>
+              </tr>
+              {% endif %}
+              
+            </tbody>
+
+            {% endfor %}
+          </table>
+
+
+    </div>
+
+   <!-- <div class="container">
+
+      <a class="btn btn-primary btn-lg" button style="margin:30px" href="/view_client" role="button">View Clients</a>
+      <a class="btn btn-primary btn-lg" button style="margin:30px" href="/add_client" role="button">Add Clients</a>
+      <a class="btn btn-primary btn-lg" button style="margin:30px" href="/remove_client" role="button">Remove Clients</a>
+      <a class="btn btn-primary btn-lg" button style="margin:30px" href="/filter_client" role="button">Filter Clients</a>
+      <a class="btn btn-primary btn-lg" button style="margin:30px" href="/project_details" role="button">Project Details</a>
+
+
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    <!--Bootstrap Js-->
+
+    <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    -->
+
+    </body>
+
+
+</html>

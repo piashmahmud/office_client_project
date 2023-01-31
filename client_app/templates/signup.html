@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>EIC Clints</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
+   </head>
+
+   <style>
+    .header {
+        padding: 1px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 20px;
+      }
+
+    
+      .form-center {
+        display:flex;
+        justify-content: center;
+        background: #6ea9e7;
+        border: 5px solid #53687E;
+        }
+
+    </style>
+
+
+  <body>
+
+    <div class="header">
+        <h1>EIC RED-TEAM PROJECT DASHBOARD</h1>
+        <h3>Sign Up</h3>
+    </div>
+
+    <div class="form-center">
+        <form action="/signup" method="post">
+            {% csrf_token %}
+
+        <div class="mb-3">
+                <label for="" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+            
+        <div class="mb-3">
+            <label for="" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="fname" name="fname" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lname" name="lname">
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pass1" name="pass1" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="pass2" name="pass2" required>
+        </div>
+
+       <!-- <div class="mb-3">
+          <label for="ending_date" class="form-label">Ending Date</label>
+          <input type="date" format="yyyy-mm-dd" class="form-control" id="ending_date" name="ending_date" value="{{ ending_date }}">
+        </div>
+
+        <div class="mb-3">
+          <label for="scope" class="form-label">Scope</label>
+          <input type="text" class="form-control" id="scope" name="scope" value="{{ scope }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="project_status" class="form-label">Project Status</label>
+            <input type="number" class="form-control" id="project_status" name="project_status" value="{{ project_status }}">
+        </div>
+
+        <div class="mb-3">
+          <label for="deadline" class="form-label">Deadline</label>
+          <input type="text" class="form-control" id="deadline" name="deadline" value="{{ deadline }}">
+        </div> -->
+
+
+
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+      <hr>
+
+    <!--<div class="container">
+
+        <a class="btn btn-primary btn-lg" button style="margin-left:150px;margin-right:100px" href="/view_client" role="button">View Clients</a>
+        <a class="btn btn-primary btn-lg" button style="margin-left:100px;margin-right:100px" href="/remove_client" role="button">Remove Clients</a>
+        <a class="btn btn-primary btn-lg" button style="margin-left:100px;margin-right:100px" href="/filter_client" role="button">Filter Clients</a>
+
+
+    </div>-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    <!--Bootstrap Js-->
+
+    <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    -->
+
+    </body>
+
+
+</html>
